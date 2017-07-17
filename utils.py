@@ -4,7 +4,6 @@ import cv2
 import datetime
 from threading import Thread
 
-
 class FPS:
     def __init__(self):
         # store the start time, end time, and total number of frames
@@ -36,11 +35,11 @@ class FPS:
         # compute the (approximate) frames per second
         return self._numFrames / self.elapsed()
 
-
 class WebcamVideoStream:
     def __init__(self, src, width, height):
         # initialize the video camera stream and read the first frame
         # from the stream
+        src = -1
         self.stream = cv2.VideoCapture(src)
         self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, width)
         self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, height)

@@ -390,6 +390,7 @@ def visualize_boxes_and_labels_on_image_array(image,
               int(100*scores[i]))
         else:
           display_str = 'score: {}%'.format(int(100 * scores[i]))
+        #display_str = '' ########################
         box_to_display_str_map[box].append(display_str)
         if agnostic_mode:
           box_to_color_map[box] = 'DarkOrange'
@@ -399,6 +400,7 @@ def visualize_boxes_and_labels_on_image_array(image,
 
   # Draw all boxes onto image.
   for box, color in six.iteritems(box_to_color_map):
+    #print('Box to plot: {}, string: {}'.format(box, box_to_display_str_map[box]))
     ymin, xmin, ymax, xmax = box
     if instance_masks is not None:
       draw_mask_on_image_array(
